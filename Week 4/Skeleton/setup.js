@@ -7,7 +7,7 @@ export var renderer;
 export var cube;
 
 const cubes = [];
-const n = 36;
+const n = 150;
 
 const clock = new THREE.Clock();
 const speed = 0.75;
@@ -27,9 +27,10 @@ export function setScene() {
 
 export function setSceneElements() {
     let cube_geometry = new THREE.BoxGeometry(1,1,1);
-    let cube_material = new THREE.MeshBasicMaterial({
+    let cube_material = new THREE.MeshPhongMaterial({
         color: new THREE.Color(0,1,0),
-        wireframe: true,
+        wireframe: false,
+        shininess: 0,
     });
     cube = new THREE.Mesh(cube_geometry, cube_material);
     GenerateStrip();
